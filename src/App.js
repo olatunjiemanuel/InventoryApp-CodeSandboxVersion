@@ -52,14 +52,16 @@ function App() {
         {noInventoryView()}
       </View>
       <Modal visible={modalView} animationType="slide" transparent={true}>
-        <View style={styles.addItemModal}>
-          <TouchableOpacity
-            style={styles.modalCloseButton}
-            onPress={(prev) => setModalView(!prev)}
-          >
-            <Text style={styles.modalText}>X</Text>
-          </TouchableOpacity>
-          <CustomTextInput />
+        <View style={styles.modalCntnr}>
+          <View style={styles.addItemModal}>
+            <TouchableOpacity
+              style={styles.modalCloseButton}
+              onPress={(prev) => setModalView(!prev)}
+            >
+              <Text style={styles.modalText}>X</Text>
+            </TouchableOpacity>
+            <CustomTextInput />
+          </View>
         </View>
       </Modal>
     </View>
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
   app: {
     maxWidth: 500,
     flex: 1,
-    backgroundColor: "orange"
+    backgroundColor: "white"
   },
   headerCntnr: {
     borderWidth: 1,
@@ -105,10 +107,14 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: "center"
   },
+  modalCntnr: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.5)"
+  },
   addItemModal: {
     flex: 1,
-    backgroundColor: "red",
-    margin: 40,
+    backgroundColor: "white",
+    margin: 30,
     borderRadius: 10
   },
   modalCloseButton: {
