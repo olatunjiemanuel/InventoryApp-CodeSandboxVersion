@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, View, TextInput, Text } from "react-native";
 
 const CustomTextInput = (props) => {
-  const { formTitle } = props;
+  const { formTitle, placeHolder } = props;
   return (
     <View style={styles.textInputCntnr}>
-      <Text>{formTitle}</Text>
-      <TextInput style={styles.textInput} />
+      <Text style={styles.headerText}>{formTitle}</Text>
+      <TextInput style={styles.textInput} placeholder={placeHolder} />
     </View>
   );
 };
@@ -19,8 +19,12 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   textInput: {
-    borderBottomWidth: 1,
-    width: 250
+    width: 250,
+    padding: 5,
+    placeholderTextColor: "grey"
+  },
+  headerText: {
+    padding: 5
   }
 });
 

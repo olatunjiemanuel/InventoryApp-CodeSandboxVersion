@@ -60,7 +60,12 @@ function App() {
             >
               <Text style={styles.modalText}>X</Text>
             </TouchableOpacity>
-            <CustomTextInput />
+            <View style={styles.customTextInputCntnr}>
+              <CustomTextInput
+                formTitle="Item name"
+                placeHolder="Enter item name"
+              />
+            </View>
           </View>
         </View>
       </Modal>
@@ -76,10 +81,10 @@ const styles = StyleSheet.create({
   },
   headerCntnr: {
     borderWidth: 1,
-    borderColor: "purple",
+    borderColor: "green",
     width: 120,
     padding: 7,
-    backgroundColor: "purple",
+    backgroundColor: "green",
     alignItems: "center",
     borderRadius: 50,
     marginTop: 20,
@@ -120,11 +125,14 @@ const styles = StyleSheet.create({
   modalCloseButton: {
     marginTop: 10,
     width: 20,
-    marginLeft: 270,
+    marginLeft: 287,
     alignItems: "center"
   },
   modalText: {
     fontSize: 20
+  },
+  customTextInputCntnr: {
+    marginTop: 10
   }
 });
 
