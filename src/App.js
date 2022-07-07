@@ -5,9 +5,11 @@ import {
   View,
   Modal,
   TouchableOpacity,
-  TextInput
+  ScrollView
 } from "react-native";
+
 import CustomTextInput from "../components/CustomTextInput";
+import CustomButton from "../components/CustomButton";
 
 function App() {
   const [modalView, setModalView] = useState(false);
@@ -15,9 +17,10 @@ function App() {
   const [InventoryObject, setInventoryObject] = useState({
     ItemName: "",
     ItemID: null,
-    ItemImageUrl: "",
     ItemSummary: "",
-    NumberOfItemInStock: null
+    NumberOfItemInStock: null,
+    ItemPrice: null,
+    ItemImageUrl: ""
   });
 
   const noInventoryView = () => {
@@ -60,12 +63,41 @@ function App() {
             >
               <Text style={styles.modalText}>X</Text>
             </TouchableOpacity>
-            <View style={styles.customTextInputCntnr}>
-              <CustomTextInput
-                formTitle="Item name"
-                placeHolder="Enter item name"
-              />
-            </View>
+            <ScrollView style={styles.customTextInputCntnr}>
+              <View>
+                <CustomTextInput
+                  formTitle="Item name"
+                  placeHolder="Enter item name"
+                />
+              </View>
+              <View>
+                <CustomTextInput
+                  formTitle="Item id"
+                  placeHolder="Enter item id"
+                />
+              </View>
+              <View>
+                <CustomTextInput
+                  formTitle="Item summary"
+                  placeHolder="Describe this item"
+                />
+              </View>
+              <View>
+                <CustomTextInput
+                  formTitle="Amount in stock"
+                  placeHolder="How many of these items are in stock ?"
+                />
+              </View>
+              <View>
+                <CustomTextInput
+                  formTitle="Item price"
+                  placeHolder="Enter a price for this item"
+                />
+              </View>
+              <View>
+                <CustomButton buttonText="Add image" />
+              </View>
+            </ScrollView>
           </View>
         </View>
       </Modal>
@@ -81,10 +113,10 @@ const styles = StyleSheet.create({
   },
   headerCntnr: {
     borderWidth: 1,
-    borderColor: "green",
+    borderColor: "blue",
     width: 120,
     padding: 7,
-    backgroundColor: "green",
+    backgroundColor: "blue",
     alignItems: "center",
     borderRadius: 50,
     marginTop: 20,
@@ -132,7 +164,8 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   customTextInputCntnr: {
-    marginTop: 10
+    marginTop: 10,
+    backgroundColor: "red"
   }
 });
 
