@@ -164,8 +164,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   customTextInputCntnr: {
-    marginTop: 10,
-    backgroundColor: "red"
+    marginTop: 10
   }
 });
 
