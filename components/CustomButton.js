@@ -2,9 +2,9 @@ import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 const CustomButtom = (props) => {
-  const { buttonText } = props;
+  const { buttonText, onPress } = props;
   return (
-    <TouchableOpacity style={Styles.buttonContainer}>
+    <TouchableOpacity style={Styles.buttonContainer} onPress={onPress}>
       <Text>{buttonText}</Text>
     </TouchableOpacity>
   );
@@ -12,7 +12,14 @@ const CustomButtom = (props) => {
 
 const Styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor: "blue"
+    backgroundColor: "blue",
+    alignItems: "center",
+    alignSelf: "center",
+    borderRadius: 5,
+    borderWidth: 1,
+    height: 40,
+    width: 150,
+    justifyContent: "center"
   }
 });
 

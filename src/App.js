@@ -22,6 +22,7 @@ function App() {
     ItemPrice: null,
     ItemImageUrl: ""
   });
+  const [Camera, setCamera] = useState(false);
 
   const noInventoryView = () => {
     return (
@@ -70,32 +71,37 @@ function App() {
                   placeHolder="Enter item name"
                 />
               </View>
-              <View>
+              <View style={{ paddingTop: 20 }}>
                 <CustomTextInput
                   formTitle="Item id"
                   placeHolder="Enter item id"
                 />
               </View>
-              <View>
+              <View style={{ paddingTop: 20 }}>
                 <CustomTextInput
                   formTitle="Item summary"
                   placeHolder="Describe this item"
                 />
               </View>
-              <View>
+              <View style={{ paddingTop: 20 }}>
                 <CustomTextInput
                   formTitle="Amount in stock"
                   placeHolder="How many of these items are in stock ?"
                 />
               </View>
-              <View>
+              <View style={{ paddingTop: 20 }}>
                 <CustomTextInput
                   formTitle="Item price"
                   placeHolder="Enter a price for this item"
                 />
               </View>
-              <View>
-                <CustomButton buttonText="Add image" />
+              <View style={{ paddingTop: 40 }}>
+                <CustomButton
+                  buttonText="add image"
+                  onPress={() => {
+                    setCamera(true);
+                  }}
+                />
               </View>
             </ScrollView>
           </View>
@@ -150,7 +156,7 @@ const styles = StyleSheet.create({
   },
   addItemModal: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#fff",
     margin: 30,
     borderRadius: 10
   },
