@@ -10,6 +10,7 @@ import {
 
 import CustomTextInput from "../components/CustomTextInput";
 import CustomButton from "../components/CustomButton";
+import CustomHeader from "../components/CustomHeader";
 
 function App() {
   const [modalView, setModalView] = useState(false);
@@ -58,12 +59,9 @@ function App() {
       <Modal visible={modalView} animationType="slide" transparent={true}>
         <View style={styles.modalCntnr}>
           <View style={styles.addItemModal}>
-            <TouchableOpacity
-              style={styles.modalCloseButton}
-              onPress={(prev) => setModalView(!prev)}
-            >
-              <Text style={styles.modalText}>X</Text>
-            </TouchableOpacity>
+            <View style={styles.addItemHeader}>
+              <CustomHeader onPress={(prev) => setModalView(!prev)} />
+            </View>
             <ScrollView style={styles.customTextInputCntnr}>
               <View>
                 <CustomTextInput
@@ -150,6 +148,9 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: "center"
   },
+  addItemHeader: {
+    paddingBottom: 20
+  },
   modalCntnr: {
     flex: 1,
     backgroundColor: "rgba(0,0,0,0.5)"
@@ -159,15 +160,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     margin: 30,
     borderRadius: 10
-  },
-  modalCloseButton: {
-    marginTop: 10,
-    width: 20,
-    marginLeft: 287,
-    alignItems: "center"
-  },
-  modalText: {
-    fontSize: 20
   },
   customTextInputCntnr: {
     marginTop: 10
