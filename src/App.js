@@ -14,7 +14,7 @@ import CustomHeader from "../components/CustomHeader";
 
 function App() {
   const [modalView, setModalView] = useState(false);
-  const [InventoryArray, setInventoryArray] = useState([]);
+  //const [InventoryArray, setInventoryArray] = useState([]);
   const [itemName, setItemName] = useState(null);
   const [InventoryObject, setInventoryObject] = useState({
     ItemName: "",
