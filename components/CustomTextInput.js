@@ -2,11 +2,15 @@ import React from "react";
 import { StyleSheet, View, TextInput, Text } from "react-native";
 
 const CustomTextInput = (props) => {
-  const { formTitle, placeHolder } = props;
+  const { formTitle, placeHolder, onChangeText } = props;
   return (
     <View style={styles.textInputCntnr}>
       <Text style={styles.headerText}>{formTitle}</Text>
-      <TextInput style={styles.textInput} placeholder={placeHolder} />
+      <TextInput
+        style={styles.textInput}
+        placeholder={placeHolder}
+        onChangeText={onChangeText}
+      />
     </View>
   );
 };

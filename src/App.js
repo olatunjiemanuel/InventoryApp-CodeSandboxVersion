@@ -15,6 +15,7 @@ import CustomHeader from "../components/CustomHeader";
 function App() {
   const [modalView, setModalView] = useState(false);
   const [InventoryArray, setInventoryArray] = useState([]);
+  const [itemName, setItemName] = useState(null);
   const [InventoryObject, setInventoryObject] = useState({
     ItemName: "",
     ItemID: null,
@@ -24,6 +25,12 @@ function App() {
     ItemImageUrl: ""
   });
   const [Camera, setCamera] = useState(false);
+
+  // const handleSubmit = () => {
+  //   setInventoryObject({
+  //     Itemname: itemName
+  //   })
+  // }
 
   const noInventoryView = () => {
     return (
@@ -67,30 +74,55 @@ function App() {
                 <CustomTextInput
                   formTitle="Item name"
                   placeHolder="Enter item name"
+                  onChangeText={(value) =>
+                    setInventoryObject({
+                      ItemName: value
+                    })
+                  }
                 />
               </View>
               <View style={{ paddingTop: 20 }}>
                 <CustomTextInput
                   formTitle="Item id"
                   placeHolder="Enter item id"
+                  onChangeText={(value) =>
+                    setInventoryObject({
+                      ItemID: value
+                    })
+                  }
                 />
               </View>
               <View style={{ paddingTop: 20 }}>
                 <CustomTextInput
                   formTitle="Item summary"
                   placeHolder="Describe this item"
+                  onChangeText={(value) =>
+                    setInventoryObject({
+                      ItemSummary: value
+                    })
+                  }
                 />
               </View>
               <View style={{ paddingTop: 20 }}>
                 <CustomTextInput
                   formTitle="Amount in stock"
                   placeHolder="How many of these items are in stock ?"
+                  onChangeText={(value) =>
+                    setInventoryObject({
+                      NumberOfItemInStock: value
+                    })
+                  }
                 />
               </View>
               <View style={{ paddingTop: 20 }}>
                 <CustomTextInput
                   formTitle="Item price"
                   placeHolder="Enter a price for this item"
+                  onChangeText={(value) =>
+                    setInventoryObject({
+                      ItemPrice: value
+                    })
+                  }
                 />
               </View>
               <View style={{ paddingTop: 40 }}>

@@ -5,8 +5,8 @@ const CustomHeader = (props) => {
   const { onPress } = props;
   return (
     <View style={Styles.HeaderCntnr}>
-      <View style={Styles.addItemHeader}>
-        <Text>Add Item</Text>
+      <View style={Styles.Header}>
+        <Text style={Styles.headerText}>Add Item</Text>
       </View>
       <TouchableOpacity style={Styles.modalCloseButton} onPress={onPress}>
         <Text style={Styles.modalText}>X</Text>
@@ -17,14 +17,17 @@ const CustomHeader = (props) => {
 
 const Styles = StyleSheet.create({
   HeaderCntnr: {
-    backgroundColor: "red",
     flexDirection: "row",
     alignItems: "center"
+  },
+  Header: {
+    paddingLeft: 124,
+    paddingTop: 20
   },
   modalCloseButton: {
     marginTop: 10,
     width: 20,
-    marginLeft: 225,
+    marginLeft: 100,
     alignItems: "center"
   },
   modalText: {
